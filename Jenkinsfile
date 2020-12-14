@@ -43,8 +43,6 @@ pipeline {
 		
         echo "------------>Unit Tests<------------"
 		sh 'gradle --b ./microservicio/build.gradle test'
-		junit 'microservicio/infraestructura/build/test-results/test/*.xml'
-		sh 'gradle --b ./microservicio/build.gradle jacocoTestReport'
       }
     }
 
@@ -71,6 +69,7 @@ pipeline {
     }
     success {
       echo 'This will run only if successful'
+	  junit 'microservicio/infraestructura/build/test-results/test/*.xml'
     }
     failure {
       echo 'This will run only if failed'
