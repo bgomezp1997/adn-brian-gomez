@@ -44,7 +44,7 @@ pipeline {
         echo "------------>Unit Tests<------------"
 		sh 'gradle --b ./microservicio/build.gradle test'
 		junit 'microservicio/infraestructura/build/test-results/test/*.xml'
-		sh 'gradle --b ./build.gradle jacocoTestReport'
+		sh 'gradle --b ./microservicio/build.gradle jacocoTestReport'
       }
     }
 
