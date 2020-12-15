@@ -8,6 +8,7 @@ import com.ceiba.usuario.puerto.dao.DaoUsuario;
 
 import org.springframework.stereotype.Component;
 
+import com.ceiba.usuario.adaptador.mapper.MapeoUsuario;
 import com.ceiba.usuario.modelo.dto.DtoUsuario;
 
 @Component

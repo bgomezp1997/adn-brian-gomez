@@ -10,11 +10,13 @@ import com.ceiba.usuario.modelo.dto.DtoUsuario;
 @Component
 public class ManejadorListarUsuarios {
 
-    private final DaoUsuario daoUsuario;
+	private final DaoUsuario daoUsuario;
 
-    public ManejadorListarUsuarios(DaoUsuario daoUsuario){
-        this.daoUsuario = daoUsuario;
-    }
+	public ManejadorListarUsuarios(DaoUsuario daoUsuario) {
+		this.daoUsuario = daoUsuario;
+	}
 
-    public List<DtoUsuario> ejecutar(){ return this.daoUsuario.listar(); }
+	public List<DtoUsuario> ejecutar() {
+		return this.daoUsuario.listar();
+	}
 }
