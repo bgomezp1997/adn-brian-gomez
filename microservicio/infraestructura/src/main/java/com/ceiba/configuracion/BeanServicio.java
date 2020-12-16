@@ -3,27 +3,27 @@ package com.ceiba.configuracion;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.ceiba.usuario.puerto.repositorio.RepositorioUsuario;
-import com.ceiba.usuario.servicio.ServicioActualizarUsuario;
-import com.ceiba.usuario.servicio.ServicioCrearUsuario;
-import com.ceiba.usuario.servicio.ServicioEliminarUsuario;
+import com.ceiba.puerto.repositorio.RepositorioPaciente;
+import com.ceiba.servicio.ServicioActualizarPaciente;
+import com.ceiba.servicio.ServicioCrearPaciente;
+import com.ceiba.servicio.ServicioEliminarPaciente;
 
 @Configuration
 public class BeanServicio {
 
 	@Bean
-	public ServicioCrearUsuario servicioCrearUsuario(RepositorioUsuario repositorioUsuario) {
-		return new ServicioCrearUsuario(repositorioUsuario);
+	public ServicioCrearPaciente servicioCrearUsuario(RepositorioPaciente repositorioUsuario) {
+		return new ServicioCrearPaciente(repositorioUsuario);
 	}
 
 	@Bean
-	public ServicioEliminarUsuario servicioEliminarUsuario(RepositorioUsuario repositorioUsuario) {
-		return new ServicioEliminarUsuario(repositorioUsuario);
+	public ServicioEliminarPaciente servicioEliminarUsuario(RepositorioPaciente repositorioUsuario) {
+		return new ServicioEliminarPaciente(repositorioUsuario);
 	}
 
 	@Bean
-	public ServicioActualizarUsuario servicioActualizarUsuario(RepositorioUsuario repositorioUsuario) {
-		return new ServicioActualizarUsuario(repositorioUsuario);
+	public ServicioActualizarPaciente servicioActualizarUsuario(RepositorioPaciente repositorioUsuario) {
+		return new ServicioActualizarPaciente(repositorioUsuario);
 	}
 
 }
