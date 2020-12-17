@@ -1,16 +1,16 @@
-insert into paciente 
+insert into medico
 	(nombres, 
 	apellidos, 
 	identificacion, 
 	fecha_creacion, 
 	email, 
-	estrato, 
-	id_eps) 
+	especialidad, 
+	numero_tarjeta_profesional) 
 values 
 	(:nombres, 
 	:apellidos, 
 	:identificacion, 
 	:fechaCreacion, 
 	:email, 
-	:estrato, 
-	:idEps)
+	:especialidad, 
+	:numeroTarjetaProfesional)

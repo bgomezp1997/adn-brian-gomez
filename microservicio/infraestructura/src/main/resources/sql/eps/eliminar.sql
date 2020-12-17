@@ -1,0 +1,1 @@
+delete from eps where id = :id

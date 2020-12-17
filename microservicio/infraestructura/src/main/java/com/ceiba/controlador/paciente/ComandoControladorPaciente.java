@@ -1,4 +1,4 @@
-package com.ceiba.controlador;
+package com.ceiba.controlador.paciente;
 
 import com.ceiba.ComandoRespuesta;
 import com.ceiba.comando.ComandoPaciente;
@@ -43,8 +43,8 @@ public class ComandoControladorPaciente {
 	}
 
 	@PutMapping(value="/{id}")
-	@ApiOperation("Actualizar paciente")
-	public void actualizar(@RequestBody ComandoPaciente comandoPaciente,@PathVariable Long id) {
+	@ApiOperation("Actualizar Paciente")
+	public void actualizar(@RequestBody ComandoPaciente comandoPaciente, @PathVariable Long id) {
 		comandoPaciente.setId(id);
 		manejadorActualizarPaciente.ejecutar(comandoPaciente);
 	}

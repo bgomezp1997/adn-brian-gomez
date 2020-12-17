@@ -5,6 +5,6 @@ select
 	identificacion, 
 	fecha_creacion, 
 	email, 
-	estrato,
-    	id_eps
-from paciente
+	especialidad,
+    	numero_tarjeta_profesional
+from medico

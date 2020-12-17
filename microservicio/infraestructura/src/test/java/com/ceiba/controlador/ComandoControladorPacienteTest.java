@@ -17,6 +17,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import com.ceiba.ApplicationMock;
 import com.ceiba.comando.ComandoPaciente;
+import com.ceiba.controlador.paciente.ComandoControladorPaciente;
 import com.ceiba.servicio.testdatabuilder.ComandoPacienteTestDataBuilder;
 import com.fasterxml.jackson.databind.ObjectMapper;
 

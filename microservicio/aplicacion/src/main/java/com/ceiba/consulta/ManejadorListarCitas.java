@@ -8,11 +8,11 @@ import com.ceiba.modelo.dto.DtoCita;
 import com.ceiba.puerto.dao.DaoCita;
 
 @Component
-public class ManejadorListarCita {
+public class ManejadorListarCitas {
 
 	private final DaoCita daoCita;
 
-	public ManejadorListarCita(DaoCita daoCita) {
+	public ManejadorListarCitas(DaoCita daoCita) {
 		this.daoCita = daoCita;
 	}
 

@@ -1,4 +1,4 @@
-package com.ceiba.controlador;
+package com.ceiba.controlador.paciente;
 
 import java.util.List;
 
@@ -17,16 +17,16 @@ import io.swagger.annotations.ApiOperation;
 @Api(tags={"Controlador consulta paciente"})
 public class ConsultaControladorPaciente {
 
-    private final ManejadorListarPacientes manejadorListarUsuarios;
+    private final ManejadorListarPacientes manejadorListarPacientes;
 
-    public ConsultaControladorPaciente(ManejadorListarPacientes manejadorListarUsuarios) {
-        this.manejadorListarUsuarios = manejadorListarUsuarios;
+    public ConsultaControladorPaciente(ManejadorListarPacientes manejadorListarPacientes) {
+        this.manejadorListarPacientes = manejadorListarPacientes;
     }
 
     @GetMapping
     @ApiOperation("Listar Pacientes")
     public List<DtoPaciente> listar() {
-        return this.manejadorListarUsuarios.ejecutar();
+        return this.manejadorListarPacientes.ejecutar();
     }
 
 }
