@@ -11,15 +11,11 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ComandoPaciente {
+public class ComandoCita {
 
 	private Long id;
-	private String nombres;
-	private String apellidos;
-	private LocalDateTime fechaCreacion;
-	private String identificacion;
-	private String email;
-    private Long idEps;
-    private String estrato;
-    
+	private LocalDateTime fechaCita;
+	private Long idPaciente;
+	private Long idMedico;
+	
 }

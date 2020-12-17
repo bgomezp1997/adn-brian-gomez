@@ -1,4 +1,4 @@
-package com.ceiba.comando.manejador;
+package com.ceiba.comando.manejador.paciente;
 
 import com.ceiba.comando.ComandoPaciente;
 import com.ceiba.comando.fabrica.FabricaPaciente;

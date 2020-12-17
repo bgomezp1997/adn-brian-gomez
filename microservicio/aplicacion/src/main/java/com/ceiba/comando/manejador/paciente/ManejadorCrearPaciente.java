@@ -1,4 +1,4 @@
-package com.ceiba.comando.manejador;
+package com.ceiba.comando.manejador.paciente;
 
 import com.ceiba.ComandoRespuesta;
 import com.ceiba.comando.ComandoPaciente;
@@ -15,13 +15,13 @@ public class ManejadorCrearPaciente implements ManejadorComandoRespuesta<Comando
     private final FabricaPaciente fabricaPaciente;
     private final ServicioCrearPaciente servicioCrearPaciente;
 
-    public ManejadorCrearPaciente(FabricaPaciente fabricaUsuario, ServicioCrearPaciente servicioCrearUsuario) {
-        this.fabricaPaciente = fabricaUsuario;
-        this.servicioCrearPaciente = servicioCrearUsuario;
+    public ManejadorCrearPaciente(FabricaPaciente fabricaPaciente, ServicioCrearPaciente servicioCrearPaciente) {
+        this.fabricaPaciente = fabricaPaciente;
+        this.servicioCrearPaciente = servicioCrearPaciente;
     }
 
-    public ComandoRespuesta<Long> ejecutar(ComandoPaciente comandoUsuario) {
-        Paciente paciente = this.fabricaPaciente.crear(comandoUsuario);
+    public ComandoRespuesta<Long> ejecutar(ComandoPaciente comandoPaciente) {
+        Paciente paciente = this.fabricaPaciente.crear(comandoPaciente);
         return new ComandoRespuesta<>(this.servicioCrearPaciente.ejecutar(paciente));
     }
 }

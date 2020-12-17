@@ -1,4 +1,4 @@
-package com.ceiba.comando.manejador;
+package com.ceiba.comando.manejador.paciente;
 
 import com.ceiba.manejador.ManejadorComando;
 import com.ceiba.servicio.paciente.ServicioEliminarPaciente;
@@ -15,7 +15,7 @@ public class ManejadorEliminarPaciente implements ManejadorComando<Long> {
         this.servicioEliminarUsuario = servicioEliminarUsuario;
     }
 
-    public void ejecutar(Long idUsuario) {
-        this.servicioEliminarUsuario.ejecutar(idUsuario);
+    public void ejecutar(Long idPaciente) {
+        this.servicioEliminarUsuario.ejecutar(idPaciente);
     }
 }

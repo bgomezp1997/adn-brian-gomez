@@ -2,9 +2,9 @@ package com.ceiba.controlador;
 
 import com.ceiba.ComandoRespuesta;
 import com.ceiba.comando.ComandoPaciente;
-import com.ceiba.comando.manejador.ManejadorActualizarPaciente;
-import com.ceiba.comando.manejador.ManejadorCrearPaciente;
-import com.ceiba.comando.manejador.ManejadorEliminarPaciente;
+import com.ceiba.comando.manejador.paciente.ManejadorActualizarPaciente;
+import com.ceiba.comando.manejador.paciente.ManejadorCrearPaciente;
+import com.ceiba.comando.manejador.paciente.ManejadorEliminarPaciente;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
