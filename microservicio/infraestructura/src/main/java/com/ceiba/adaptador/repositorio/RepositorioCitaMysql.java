@@ -63,10 +63,10 @@ public class RepositorioCitaMysql implements RepositorioCita {
     }
 
     @Override
-    public boolean existeExcluyendoId(Long id, LocalDateTime fechaCreacion, Long idPaciente, Long idMedico) {
+    public boolean existeExcluyendoId(Long id, LocalDateTime fechaCita, Long idPaciente, Long idMedico) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("id", id);
-        paramSource.addValue("fechaCreacion", fechaCreacion.toLocalDate());
+        paramSource.addValue("fechaCita", fechaCita.toLocalDate().toString());
         paramSource.addValue("idPaciente", idPaciente);
         paramSource.addValue("idMedico", idMedico);
 

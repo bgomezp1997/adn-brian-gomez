@@ -50,6 +50,7 @@ public class Medico {
 		this.apellidos = apellidos;
 		this.fechaCreacion = fechaCreacion;
 		this.identificacion = identificacion;
+		this.email = email;
 		this.especialidad = especialidad;
 		this.numeroTarjetaProfesional = numeroTarjetaProfesional;
 	}

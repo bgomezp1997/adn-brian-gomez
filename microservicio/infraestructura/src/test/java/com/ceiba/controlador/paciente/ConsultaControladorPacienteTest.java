@@ -1,4 +1,4 @@
-package com.ceiba.controlador;
+package com.ceiba.controlador.paciente;
 
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.core.Is.is;
@@ -16,7 +16,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 import com.ceiba.ApplicationMock;
-import com.ceiba.controlador.paciente.ConsultaControladorPaciente;
 
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes= ApplicationMock.class)

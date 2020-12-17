@@ -1,4 +1,4 @@
-package com.ceiba.controlador;
+package com.ceiba.controlador.paciente;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -17,7 +17,6 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import com.ceiba.ApplicationMock;
 import com.ceiba.comando.ComandoPaciente;
-import com.ceiba.controlador.paciente.ComandoControladorPaciente;
 import com.ceiba.servicio.testdatabuilder.ComandoPacienteTestDataBuilder;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
