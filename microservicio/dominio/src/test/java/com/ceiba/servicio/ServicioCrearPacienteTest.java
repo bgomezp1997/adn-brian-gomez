@@ -7,17 +7,10 @@ import com.ceiba.BasePrueba;
 import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 import com.ceiba.modelo.entidad.Paciente;
 import com.ceiba.puerto.repositorio.RepositorioPaciente;
+import com.ceiba.servicio.paciente.ServicioCrearPaciente;
 import com.ceiba.servicio.testdatabuilder.PacienteTestDataBuilder;
 
 public class ServicioCrearPacienteTest {
-
-//    @Test
-//    public void validarClaveLongitudMenor4Test() {
-//        // arrange
-//        UsuarioTestDataBuilder usuarioTestDataBuilder = new UsuarioTestDataBuilder().conClave("124");
-//        // act - assert
-//        BasePrueba.assertThrows(() -> usuarioTestDataBuilder.build(), ExcepcionLongitudValor.class, "La clave debe tener una longitud mayor o igual a 4");
-//    }
 
     @Test
     public void validarUsuarioExistenciaPreviaTest() {

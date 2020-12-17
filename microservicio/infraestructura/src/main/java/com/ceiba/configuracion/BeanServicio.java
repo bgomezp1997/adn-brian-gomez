@@ -4,9 +4,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.ceiba.puerto.repositorio.RepositorioPaciente;
-import com.ceiba.servicio.ServicioActualizarPaciente;
-import com.ceiba.servicio.ServicioCrearPaciente;
-import com.ceiba.servicio.ServicioEliminarPaciente;
+import com.ceiba.servicio.paciente.ServicioActualizarPaciente;
+import com.ceiba.servicio.paciente.ServicioCrearPaciente;
+import com.ceiba.servicio.paciente.ServicioEliminarPaciente;
 
 @Configuration
 public class BeanServicio {

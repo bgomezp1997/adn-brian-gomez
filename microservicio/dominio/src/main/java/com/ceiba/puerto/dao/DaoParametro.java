@@ -6,9 +6,10 @@ import com.ceiba.modelo.dto.DtoParametro;
 
 public interface DaoParametro {
 
-    /**
-     * Permite listar usuarios
-     * @return los usuarios
-     */
-    List<DtoParametro> listarPorEstado(Boolean estado);
+	/**
+	 * Permite listar parametros
+	 * 
+	 * @return los parametros
+	 */
+	List<DtoParametro> listarPorEstado(Boolean estado);
 }

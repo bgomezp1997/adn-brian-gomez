@@ -1,4 +1,4 @@
-package com.ceiba.servicio;
+package com.ceiba.servicio.paciente;
 
 import com.ceiba.puerto.repositorio.RepositorioPaciente;
 

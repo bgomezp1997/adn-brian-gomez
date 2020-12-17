@@ -7,6 +7,7 @@ import com.ceiba.BasePrueba;
 import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 import com.ceiba.modelo.entidad.Paciente;
 import com.ceiba.puerto.repositorio.RepositorioPaciente;
+import com.ceiba.servicio.paciente.ServicioActualizarPaciente;
 import com.ceiba.servicio.testdatabuilder.PacienteTestDataBuilder;
 
 public class ServicioActualizarPacienteTest {
@@ -19,6 +20,6 @@ public class ServicioActualizarPacienteTest {
         Mockito.when(repositorioUsuario.existeExcluyendoId(Mockito.anyLong(),Mockito.anyString())).thenReturn(true);
         ServicioActualizarPaciente servicioActualizarUsuario = new ServicioActualizarPaciente(repositorioUsuario);
         // act - assert
-        BasePrueba.assertThrows(() -> servicioActualizarUsuario.ejecutar(usuario), ExcepcionDuplicidad.class,"El usuario ya existe en el sistema");
+        BasePrueba.assertThrows(() -> servicioActualizarUsuario.ejecutar(usuario), ExcepcionDuplicidad.class,"El paciente ya existe en el sistema");
     }
 }

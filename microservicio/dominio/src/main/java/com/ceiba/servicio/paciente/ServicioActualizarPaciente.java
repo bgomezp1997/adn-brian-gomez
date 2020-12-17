@@ -1,4 +1,4 @@
-package com.ceiba.servicio;
+package com.ceiba.servicio.paciente;
 
 import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 import com.ceiba.modelo.entidad.Paciente;
@@ -6,7 +6,7 @@ import com.ceiba.puerto.repositorio.RepositorioPaciente;
 
 public class ServicioActualizarPaciente {
 
-    private static final String EL_USUARIO_YA_EXISTE_EN_EL_SISTEMA = "El usuario ya existe en el sistema";
+    private static final String EL_PACIENTE_YA_EXISTE_EN_EL_SISTEMA = "El paciente ya existe en el sistema";
 
     private final RepositorioPaciente repositorioUsuario;
 
@@ -22,7 +22,7 @@ public class ServicioActualizarPaciente {
     private void validarExistenciaPrevia(Paciente paciente) {
         boolean existe = this.repositorioUsuario.existeExcluyendoId(paciente.getId(), paciente.getIdentificacion());
         if(existe) {
-            throw new ExcepcionDuplicidad(EL_USUARIO_YA_EXISTE_EN_EL_SISTEMA);
+            throw new ExcepcionDuplicidad(EL_PACIENTE_YA_EXISTE_EN_EL_SISTEMA);
         }
     }
 }

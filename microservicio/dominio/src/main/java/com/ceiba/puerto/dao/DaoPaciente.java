@@ -6,9 +6,10 @@ import com.ceiba.modelo.dto.DtoPaciente;
 
 public interface DaoPaciente {
 
-    /**
-     * Permite listar pacientes
-     * @return los pacientes
-     */
-    List<DtoPaciente> listar();
+	/**
+	 * Permite listar pacientes
+	 * 
+	 * @return los pacientes
+	 */
+	List<DtoPaciente> listar();
 }
