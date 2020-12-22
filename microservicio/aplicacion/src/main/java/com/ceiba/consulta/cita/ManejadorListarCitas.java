@@ -1,4 +1,4 @@
-package com.ceiba.consulta;
+package com.ceiba.consulta.cita;
 
 import java.util.List;
 

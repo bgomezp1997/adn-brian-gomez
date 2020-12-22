@@ -19,7 +19,7 @@ public class ComandoPaciente {
 	private LocalDateTime fechaCreacion;
 	private String identificacion;
 	private String email;
-    private Long idEps;
+    private ComandoEps eps;
     private String estrato;
     
 }

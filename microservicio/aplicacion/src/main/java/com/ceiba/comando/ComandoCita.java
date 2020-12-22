@@ -15,7 +15,7 @@ public class ComandoCita {
 
 	private Long id;
 	private LocalDateTime fechaCita;
-	private Long idPaciente;
-	private Long idMedico;
+	private ComandoPaciente paciente;
+	private ComandoMedico medico;
 	
 }

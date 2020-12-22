@@ -24,4 +24,6 @@ select
 from cita c
     inner join medico m on m.id = c.id_medico
     inner join paciente p on p.id = c.id_paciente
-    inner join eps e on e.id = p.id_eps;
+    inner join eps e on e.id = p.id_eps
+where
+    c.id = :id;

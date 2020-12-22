@@ -11,7 +11,7 @@ public class DtoCita {
 	
 	private Long id;
 	private LocalDateTime fechaCita;
-	private Long idPaciente;
-	private Long idMedico;
+	private DtoPaciente paciente;
+	private DtoMedico medico;
 
 }

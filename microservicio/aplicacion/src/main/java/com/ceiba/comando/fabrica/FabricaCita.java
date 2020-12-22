@@ -12,8 +12,8 @@ public class FabricaCita {
 		return new Cita(
 				comandoCita.getId(), 
 				comandoCita.getFechaCita(), 
-				comandoCita.getIdPaciente(), 
-				comandoCita.getIdMedico()
+				comandoCita.getPaciente().getId(), 
+				comandoCita.getMedico().getId()
 		);
 	}
 

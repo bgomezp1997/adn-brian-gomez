@@ -2,6 +2,7 @@ package com.ceiba.adaptador.dao;
 
 import java.util.List;
 
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Component;
 
 import com.ceiba.adaptador.mapper.MapeoCita;
@@ -17,6 +18,9 @@ public class DaoCitaMysql implements DaoCita {
 
     @SqlStatement(namespace="cita", value="listar")
     private static String sqlListar;
+    
+    @SqlStatement(namespace="cita", value="obtener")
+    private static String sqlObtener;
 
     public DaoCitaMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
@@ -26,4 +30,11 @@ public class DaoCitaMysql implements DaoCita {
     public List<DtoCita> listar() {
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListar, new MapeoCita());
     }
+
+	@Override
+	public DtoCita obtener(Long id) {
+		MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("id", id);
+		return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlObtener, paramSource, new MapeoCita()).iterator().next();
+	}
 }

@@ -12,5 +12,13 @@ public interface DaoCita {
 	 * @return las citas
 	 */
 	List<DtoCita> listar();
+	
+	/**
+	 * Permite obtener una cita por su id
+	 * 
+	 * @param id
+	 * @return la cita
+	 */
+	DtoCita obtener(Long id);
 
 }

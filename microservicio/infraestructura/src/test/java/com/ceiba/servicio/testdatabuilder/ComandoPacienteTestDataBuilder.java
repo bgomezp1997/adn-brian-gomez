@@ -2,6 +2,7 @@ package com.ceiba.servicio.testdatabuilder;
 
 import java.time.LocalDateTime;
 
+import com.ceiba.comando.ComandoEps;
 import com.ceiba.comando.ComandoPaciente;
 
 public class ComandoPacienteTestDataBuilder {
@@ -13,6 +14,7 @@ public class ComandoPacienteTestDataBuilder {
     private String email;
     private String estrato;
     private LocalDateTime fechaCreacion;
+    
     private Long idEps;
 
     public ComandoPacienteTestDataBuilder() {
@@ -26,6 +28,8 @@ public class ComandoPacienteTestDataBuilder {
     }
 
     public ComandoPaciente build() {
-        return new ComandoPaciente(id, nombres, apellidos, fechaCreacion, identificacion, email, idEps, estrato);
+    	ComandoEps comandoEps = new ComandoEps();
+    	comandoEps.setId(idEps);
+        return new ComandoPaciente(id, nombres, apellidos, fechaCreacion, identificacion, email, comandoEps, estrato);
     }
 }

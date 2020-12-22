@@ -16,7 +16,7 @@ public class FabricaPaciente {
         		comandoPaciente.getFechaCreacion(), 
         		comandoPaciente.getIdentificacion(), 
         		comandoPaciente.getEmail(), 
-        		comandoPaciente.getIdEps(), 
+        		comandoPaciente.getEps().getId(), 
         		comandoPaciente.getEstrato()
         );
     }

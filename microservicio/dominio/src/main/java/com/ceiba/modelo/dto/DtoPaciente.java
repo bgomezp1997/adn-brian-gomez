@@ -15,7 +15,7 @@ public class DtoPaciente {
 	private LocalDateTime fechaCreacion;
 	private String identificacion;
 	private String email;
-    private Long idEps;
+    private DtoEps eps;
     private String estrato;
 
 }
