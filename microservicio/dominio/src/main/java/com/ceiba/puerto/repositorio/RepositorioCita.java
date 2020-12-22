@@ -29,7 +29,7 @@ public interface RepositorioCita {
 	void eliminar(Long id);
 	
 	/**
-	 * Permite validar si existe una cita con la fecha de creación, paciente y médico relacionados
+	 * Permite validar si existe una cita con la fecha de creacion, paciente y médico relacionados
 	 * 
 	 * @param fechaCreacion
 	 * @param idPaciente
@@ -39,7 +39,7 @@ public interface RepositorioCita {
 	boolean existe(LocalDateTime fechaCreacion, Long idPaciente, Long idMedico);
 	
 	/**
-	 * Permite validar si existe una cita con la fecha de creación, paciente y médico relacionados
+	 * Permite validar si existe una cita con la fecha de creacion, paciente y médico relacionados
 	 * 
 	 * @param id
 	 * @param fechaCreacion
