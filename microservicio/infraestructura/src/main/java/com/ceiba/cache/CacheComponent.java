@@ -7,7 +7,7 @@ import javax.annotation.PostConstruct;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
 
-import com.ceiba.consulta.ManejadorListarParametros;
+import com.ceiba.consulta.parametro.ManejadorListarParametros;
 import com.ceiba.infraestructura.cache.ObjCacheManager;
 import com.ceiba.modelo.dto.DtoParametro;
 

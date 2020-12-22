@@ -12,4 +12,12 @@ public interface DaoPaciente {
 	 * @return los pacientes
 	 */
 	List<DtoPaciente> listar();
+	
+	/**
+	 * Permite obtener un paciente por su id
+	 * 
+	 * @param id
+	 * @return el paciente
+	 */
+	DtoPaciente obtener(Long id);
 }

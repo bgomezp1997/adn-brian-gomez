@@ -1,4 +1,4 @@
-package com.ceiba.consulta;
+package com.ceiba.consulta.parametro;
 
 import java.util.List;
 

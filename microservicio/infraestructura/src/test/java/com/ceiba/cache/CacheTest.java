@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import com.ceiba.consulta.ManejadorListarParametros;
+import com.ceiba.consulta.parametro.ManejadorListarParametros;
 
 public class CacheTest {
 	

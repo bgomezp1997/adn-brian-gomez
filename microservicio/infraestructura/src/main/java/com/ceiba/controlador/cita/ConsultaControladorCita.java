@@ -30,7 +30,7 @@ public class ConsultaControladorCita {
     }
     
     @GetMapping(value = "/{id}")
-    @ApiOperation("Listar Citas")
+    @ApiOperation("Obtener Cita")
     public DtoCita obtener(@PathVariable Long id) {
     	return this.manejadorObtenerCita.ejecutar(id);
     }

@@ -1,4 +1,4 @@
-package com.ceiba.consulta;
+package com.ceiba.consulta.eps;
 
 import java.util.List;
 

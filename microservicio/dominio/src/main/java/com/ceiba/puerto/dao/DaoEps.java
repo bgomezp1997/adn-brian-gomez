@@ -12,5 +12,13 @@ public interface DaoEps {
 	 * @return las eps
 	 */
 	List<DtoEps> listar();
+	
+	/**
+	 * Permite obtener una eps por su id
+	 * 
+	 * @param id
+	 * @return la eps
+	 */
+	DtoEps obtener(Long id);
 
 }

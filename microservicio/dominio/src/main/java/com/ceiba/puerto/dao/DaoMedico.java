@@ -12,5 +12,13 @@ public interface DaoMedico {
 	 * @return los medicos
 	 */
 	List<DtoMedico> listar();
+	
+	/**
+	 * Permite obtener un medico por su id
+	 * 
+	 * @param id
+	 * @return el medico
+	 */
+	DtoMedico obtener(Long id);
 
 }
