@@ -29,17 +29,17 @@ public interface RepositorioCita {
 	void eliminar(Long id);
 	
 	/**
-	 * Permite validar si existe una cita con la fecha de creacion, paciente y médico relacionados
+	 * Permite validar si existe una cita con la fecha de creacion, paciente y medico relacionados
 	 * 
 	 * @param fechaCreacion
 	 * @param idPaciente
 	 * @param idMedico
 	 * @return si existe o no
 	 */
-	boolean existe(LocalDateTime fechaCreacion, Long idPaciente, Long idMedico);
+	boolean existe(LocalDateTime fechaCita, Long idPaciente, Long idMedico);
 	
 	/**
-	 * Permite validar si existe una cita con la fecha de creacion, paciente y médico relacionados
+	 * Permite validar si existe una cita con la fecha de creacion, paciente y medico relacionados
 	 * 
 	 * @param id
 	 * @param fechaCreacion
@@ -47,6 +47,14 @@ public interface RepositorioCita {
 	 * @param idMedico
 	 * @return si existe o no
 	 */
-	boolean existeExcluyendoId(Long id, LocalDateTime fechaCreacion, Long idPaciente, Long idMedico);
+	boolean existeExcluyendoId(Long id, LocalDateTime fechaCita, Long idPaciente, Long idMedico);
+	
+	/**
+	 * Permite contar cuántas citas existen por dia
+	 * 
+	 * @param fechaCreacion
+	 * @return cantidad de citas por dia
+	 */
+	Integer contarCitasPorDia(LocalDateTime fechaCita);
 
 }

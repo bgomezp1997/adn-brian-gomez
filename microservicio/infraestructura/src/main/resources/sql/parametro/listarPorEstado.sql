@@ -1,3 +1,3 @@
-select id,nombre,valor,estado
+select id,nombre,valor,estado,tipo
 from parametro
 where estado = :estado

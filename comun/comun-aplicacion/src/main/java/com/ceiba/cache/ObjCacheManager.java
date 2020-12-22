@@ -1,4 +1,4 @@
-package com.ceiba.infraestructura.cache;
+package com.ceiba.cache;
 
 import net.sf.ehcache.Cache;
 import net.sf.ehcache.CacheException;
@@ -14,14 +14,14 @@ public class ObjCacheManager {
 
 	private Cache cache;
 
-	private static final String CACHE = "paramscache";
+	private static final String CACHE_APP = "paramscache";
 
 	public ObjCacheManager() {
 		cacheManager = CacheManager.create();
 
-		cache = cacheManager.getCache(CACHE);
+		cache = cacheManager.getCache(CACHE_APP);
 		if (cache == null) {
-			cache = new Cache(new CacheConfiguration(CACHE, 1000)
+			cache = new Cache(new CacheConfiguration(CACHE_APP, 1000)
 					.memoryStoreEvictionPolicy(MemoryStoreEvictionPolicy.LRU).eternal(true).timeToIdleSeconds(0)
 					.diskExpiryThreadIntervalSeconds(0).persistence(
 							new PersistenceConfiguration().strategy(PersistenceConfiguration.Strategy.LOCALTEMPSWAP)));
@@ -38,7 +38,7 @@ public class ObjCacheManager {
 		try {
 			cache.put(new Element(key, value));
 		} catch (CacheException e) {
-			System.out.println(String.format("Problem occurred while putting data into cache: %s", e.getMessage()));
+			throw new CacheException(String.format("Problem occurred while putting data into cache: %s", e.getMessage()));
 		}
 	}
 
@@ -48,8 +48,7 @@ public class ObjCacheManager {
 			if (element != null)
 				return element.getObjectValue();
 		} catch (CacheException ce) {
-			System.out.println(
-					String.format("Problem occurred while trying to retrieveSpecific from cache: %s", ce.getMessage()));
+			throw new CacheException(String.format("Problem occurred while trying to retrieveSpecific from cache: %s", ce.getMessage()));
 		}
 		return null;
 	}

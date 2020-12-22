@@ -50,5 +50,6 @@ create table parametro (
  primary key (id)
 );
 
-insert into parametro(nombre, valor, estado) values('VALOR_CITA', 150000, 1);
+insert into parametro(nombre, valor, estado) values('VALOR_CITA', '150000', 1);
+insert into parametro(nombre, valor, estado) values('CANTIDAD_CITAS_DIA', '5', 1);
 

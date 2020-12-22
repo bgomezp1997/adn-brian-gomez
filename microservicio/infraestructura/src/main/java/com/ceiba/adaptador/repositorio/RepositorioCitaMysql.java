@@ -29,6 +29,9 @@ public class RepositorioCitaMysql implements RepositorioCita {
 
     @SqlStatement(namespace="cita", value="existeExcluyendoId") 
     private static String sqlExisteExcluyendoId;
+    
+    @SqlStatement(namespace="cita", value="contarPorFecha.sql") 
+    private static String sqlContarPorFecha;
 
     public RepositorioCitaMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
@@ -48,9 +51,9 @@ public class RepositorioCitaMysql implements RepositorioCita {
     }
 
     @Override
-    public boolean existe(LocalDateTime fechaCreacion, Long idPaciente, Long idMedico) {
+    public boolean existe(LocalDateTime fechaCita, Long idPaciente, Long idMedico) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
-        paramSource.addValue("fechaCreacion", fechaCreacion.toLocalDate());
+        paramSource.addValue("fechaCita", fechaCita.toLocalDate());
         paramSource.addValue("idPaciente", idPaciente);
         paramSource.addValue("idMedico", idMedico);
 
@@ -72,4 +75,12 @@ public class RepositorioCitaMysql implements RepositorioCita {
 
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExisteExcluyendoId, paramSource, Boolean.class);
     }
+
+	@Override
+	public Integer contarCitasPorDia(LocalDateTime fechaCita) {
+		MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("fechaCita", fechaCita.toLocalDate().toString());
+        
+		return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlContarPorFecha, paramSource, Integer.class);
+	}
 }
