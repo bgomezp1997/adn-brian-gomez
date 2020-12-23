@@ -53,7 +53,7 @@ public class ServicioActualizarCita {
     
     private void validarFechas(Cita cita, List<DtoParametro> fechasFestivasParams) {
     	boolean existe = this.repositorioCita.existe(cita.getFechaCita(), cita.getIdPaciente(), cita.getIdMedico());
-	    if(!existe) {
+	    if(!existe && !fechasFestivasParams.isEmpty()) {
 	    	Calendar fechaCitaCalendar = Calendar.getInstance();
 	    	final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 	    	fechaCitaCalendar.setTime(Date.from(cita.getFechaCita().toLocalDate().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));

@@ -49,17 +49,19 @@ public class ServicioCrearCita {
     }
     
     private void validarFechas(Cita cita, List<DtoParametro> fechasFestivasParams) {
-    	Calendar fechaCitaCalendar = Calendar.getInstance();
-    	final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-    	fechaCitaCalendar.setTime(Date.from(cita.getFechaCita().toLocalDate().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));
-    	if(fechaCitaCalendar.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
-			throw new ExcepcionDiaNoLaborable(EL_DIA_ESCOGIDO_ES_DOMINGO);
-		}
-		for (DtoParametro dtoParametro : fechasFestivasParams) {
-			if(cita.getFechaCita().toLocalDate().isEqual(LocalDate.parse(dtoParametro.getValor(), formatter))) {
-				throw new ExcepcionDiaNoLaborable(EL_DIA_ESCOGIDO_ES_FESTIVO);
-			}
-		}
+    	if(!fechasFestivasParams.isEmpty()) {
+    		Calendar fechaCitaCalendar = Calendar.getInstance();
+        	final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        	fechaCitaCalendar.setTime(Date.from(cita.getFechaCita().toLocalDate().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));
+        	if(fechaCitaCalendar.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
+    			throw new ExcepcionDiaNoLaborable(EL_DIA_ESCOGIDO_ES_DOMINGO);
+    		}
+    		for (DtoParametro dtoParametro : fechasFestivasParams) {
+    			if(cita.getFechaCita().toLocalDate().isEqual(LocalDate.parse(dtoParametro.getValor(), formatter))) {
+    				throw new ExcepcionDiaNoLaborable(EL_DIA_ESCOGIDO_ES_FESTIVO);
+    			}
+    		}
+    	}
     }
 
 }
