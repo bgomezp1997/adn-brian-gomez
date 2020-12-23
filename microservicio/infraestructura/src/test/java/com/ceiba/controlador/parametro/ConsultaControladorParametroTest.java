@@ -1,4 +1,4 @@
-package com.ceiba.controlador.paciente;
+package com.ceiba.controlador.parametro;
 
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.core.Is.is;
@@ -19,28 +19,25 @@ import com.ceiba.ApplicationMock;
 
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = ApplicationMock.class)
-@WebMvcTest(ConsultaControladorPaciente.class)
-public class ConsultaControladorPacienteTest {
+@WebMvcTest(ConsultaControladorParametro.class)
+public class ConsultaControladorParametroTest {
 
     @Autowired
     private MockMvc mocMvc;
 
     @Test
-    public void obtener() throws Exception {
-    	Long id = 1L;
-        mocMvc.perform(get("/paciente/{id}", id)
-        		.contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.nombres", is("test")));
-    }
-    
-    @Test
     public void listar() throws Exception {
-        mocMvc.perform(get("/paciente")
+    	
+    	String estado = Boolean.TRUE.toString();
+    	String tipo = "ESPECIALIDAD";
+    	
+        mocMvc.perform(get("/parametro")
+        		.param("estado", estado)
+        		.param("tipo", tipo)
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(2)))
-                .andExpect(jsonPath("$[0].nombres", is("test")));
+                .andExpect(jsonPath("$", hasSize(5)))
+                .andExpect(jsonPath("$[0].nombre", is("CORNEOLOGO")));
     }
 
 }

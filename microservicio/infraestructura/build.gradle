@@ -22,10 +22,8 @@ dependencies {
 	runtimeOnly project.ext.db
 	testImplementation project.ext.flywaytest
 
-	
 	implementation project(':dominio')
 	implementation project(':aplicacion')
-
 
 	implementation project(':comun:comun-infraestructura')
 	implementation project(':comun:comun-aplicacion')

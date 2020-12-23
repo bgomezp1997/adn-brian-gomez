@@ -1,3 +1,3 @@
 select count(*)
 	from cita
-where DATE_FORMAT(fecha_cita, "%Y-%m-%d") = :fechaCita
+where str_to_date(fecha_cita, "%Y-%m-%d") = :fechaCita

@@ -20,7 +20,7 @@ public class ManejadorPrecioCita implements ManejadorComandoRespuesta<ComandoPre
 	}
 
 	public ComandoRespuesta<Double> ejecutar(ComandoPrecio comandoPrecio) {
-		Integer estrato = Integer.parseInt(comandoPrecio.getEstrato());
+		Integer estrato = comandoPrecio.getEstrato() != null ? Integer.parseInt(comandoPrecio.getEstrato()) : null;
 		return new ComandoRespuesta<>(this.servicioPrecioCita.ejecutar(obtenerDescuento(estrato)/100, obtenerPrecioCita(comandoPrecio.getEspecialidad())));
 	}
 	

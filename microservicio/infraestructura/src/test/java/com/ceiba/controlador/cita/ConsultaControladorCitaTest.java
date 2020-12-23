@@ -1,4 +1,4 @@
-package com.ceiba.controlador.paciente;
+package com.ceiba.controlador.cita;
 
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.core.Is.is;
@@ -19,8 +19,8 @@ import com.ceiba.ApplicationMock;
 
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = ApplicationMock.class)
-@WebMvcTest(ConsultaControladorPaciente.class)
-public class ConsultaControladorPacienteTest {
+@WebMvcTest(ConsultaControladorCita.class)
+public class ConsultaControladorCitaTest {
 
     @Autowired
     private MockMvc mocMvc;
@@ -28,19 +28,19 @@ public class ConsultaControladorPacienteTest {
     @Test
     public void obtener() throws Exception {
     	Long id = 1L;
-        mocMvc.perform(get("/paciente/{id}", id)
+        mocMvc.perform(get("/cita/{id}", id)
         		.contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.nombres", is("test")));
+                .andExpect(jsonPath("$.paciente.id", is(1)));
     }
     
     @Test
     public void listar() throws Exception {
-        mocMvc.perform(get("/paciente")
+        mocMvc.perform(get("/cita")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(2)))
-                .andExpect(jsonPath("$[0].nombres", is("test")));
+                .andExpect(jsonPath("$", hasSize(1)))
+                .andExpect(jsonPath("$[0].paciente.id", is(1)));
     }
 
 }
