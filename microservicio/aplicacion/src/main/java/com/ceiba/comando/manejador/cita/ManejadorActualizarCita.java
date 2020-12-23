@@ -1,13 +1,17 @@
 package com.ceiba.comando.manejador.cita;
 
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
-import com.ceiba.cache.ObjCacheManager;
+import com.ceiba.cache.CacheUtil;
 import com.ceiba.comando.ComandoCita;
 import com.ceiba.comando.fabrica.FabricaCita;
 import com.ceiba.manejador.ManejadorComando;
+import com.ceiba.modelo.dto.DtoParametro;
 import com.ceiba.modelo.entidad.Cita;
 import com.ceiba.modelo.util.EnumParametro;
+import com.ceiba.modelo.util.EnumTipoParametro;
 import com.ceiba.servicio.cita.ServicioActualizarCita;
 
 @Component
@@ -23,8 +27,8 @@ public class ManejadorActualizarCita implements ManejadorComando<ComandoCita> {
 
     public void ejecutar(ComandoCita comandoCita) {
         Cita cita = this.fabricaCita.crear(comandoCita);
-        ObjCacheManager objCacheManager = new ObjCacheManager();
-    	Integer cantidadCitasPorDia = Integer.parseInt((String) objCacheManager.retrieveFromCache(EnumParametro.CANTIDAD_CITAS_DIA.getIndicative()));
-        this.servicioActualizarCita.ejecutar(cita, cantidadCitasPorDia);
+        Integer cantidadCitasPorDia = Integer.parseInt(CacheUtil.obtainParameterByTipoParametroAndParametro(EnumTipoParametro.GENERAL, EnumParametro.CANTIDAD_CITAS_DIA));
+		List<DtoParametro> fechasFestivasParams = CacheUtil.obtainListByTipoParametro(EnumTipoParametro.FESTIVO);
+        this.servicioActualizarCita.ejecutar(cita, cantidadCitasPorDia, fechasFestivasParams);
     }
 }

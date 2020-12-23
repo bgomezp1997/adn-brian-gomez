@@ -26,15 +26,19 @@ public class CacheComponent {
 		if (!listParametros.isEmpty()) {
 			List<DtoParametro> listaFestivos = new ArrayList<>();
 			List<DtoParametro> listaGenerales = new ArrayList<>();
+			List<DtoParametro> listaEspecialidades = new ArrayList<>();
 			listParametros.forEach(lp -> {
 				if (lp.getTipo().equals(EnumTipoParametro.GENERAL))
 					listaGenerales.add(lp);
+				else if(lp.getTipo().equals(EnumTipoParametro.ESPECIALIDAD))
+					listaEspecialidades.add(lp);
 				else
 					listaFestivos.add(lp);
 			});
 			ObjCacheManager configuracionCache = new ObjCacheManager();
 			configuracionCache.putInCache(EnumTipoParametro.GENERAL.getIndicative(), listaGenerales);
 			configuracionCache.putInCache(EnumTipoParametro.FESTIVO.getIndicative(), listaFestivos);
+			configuracionCache.putInCache(EnumTipoParametro.ESPECIALIDAD.getIndicative(), listaEspecialidades);
 		}
 	}
 

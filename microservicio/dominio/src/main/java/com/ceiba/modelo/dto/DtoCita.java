@@ -13,5 +13,6 @@ public class DtoCita {
 	private LocalDateTime fechaCita;
 	private DtoPaciente paciente;
 	private DtoMedico medico;
+	private Double precio;
 
 }

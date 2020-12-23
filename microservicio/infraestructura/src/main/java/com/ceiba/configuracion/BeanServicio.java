@@ -10,6 +10,7 @@ import com.ceiba.puerto.repositorio.RepositorioPaciente;
 import com.ceiba.servicio.cita.ServicioActualizarCita;
 import com.ceiba.servicio.cita.ServicioCrearCita;
 import com.ceiba.servicio.cita.ServicioEliminarCita;
+import com.ceiba.servicio.cita.ServicioPrecioCita;
 import com.ceiba.servicio.eps.ServicioActualizarEps;
 import com.ceiba.servicio.eps.ServicioCrearEps;
 import com.ceiba.servicio.eps.ServicioEliminarEps;
@@ -93,6 +94,11 @@ public class BeanServicio {
 	@Bean
 	public ServicioActualizarCita servicioActualizarCita(RepositorioCita repositorioCita) {
 		return new ServicioActualizarCita(repositorioCita);
+	}
+	
+	@Bean
+	public ServicioPrecioCita servicioPrecioCita() {
+		return new ServicioPrecioCita();
 	}
 
 }

@@ -1,8 +1,10 @@
 insert into cita
 	(fecha_cita, 
 	id_paciente, 
-	id_medico) 
+	id_medico,
+	precio) 
 values 
 	(:fechaCita, 
 	:idPaciente, 
-	:idMedico)
+	:idMedico,
+	:precio)

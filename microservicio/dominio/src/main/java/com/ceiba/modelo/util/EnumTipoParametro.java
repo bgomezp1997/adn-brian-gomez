@@ -4,7 +4,9 @@ import lombok.Getter;
 
 public enum EnumTipoParametro {
 	
-	GENERAL(1), FESTIVO(2);
+	GENERAL(1), 
+	FESTIVO(2), 
+	ESPECIALIDAD(3);
 	
 	@Getter
 	private Integer indicative;

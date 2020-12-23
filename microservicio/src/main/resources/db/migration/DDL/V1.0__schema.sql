@@ -38,6 +38,7 @@ create table cita (
  id_paciente int not null,
  id_medico int not null,
  primary key (id),
+ precio double not null,
  foreign key (id_paciente) references paciente (id),
  foreign key (id_medico ) references medico (id)
 );
@@ -47,9 +48,9 @@ create table parametro (
  nombre varchar(100) not null,
  valor varchar(100) not null,
  estado boolean not null,
+ tipo varchar(50) not null,
  primary key (id)
 );
 
-insert into parametro(nombre, valor, estado) values('VALOR_CITA', '150000', 1);
-insert into parametro(nombre, valor, estado) values('CANTIDAD_CITAS_DIA', '5', 1);
+
 

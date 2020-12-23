@@ -18,7 +18,8 @@ public class MapeoCita implements RowMapper<DtoCita>, MapperResult {
 	public DtoCita mapRow(ResultSet resultSet, int rowNum) throws SQLException {
 		Long id = resultSet.getLong("id");
 		LocalDateTime fechaCita = extraerLocalDateTime(resultSet, "fecha_cita");
-		return new DtoCita(id, fechaCita, mapRowPaciente(resultSet), mapRowMedico(resultSet));
+		Double precio = resultSet.getDouble("precio");
+		return new DtoCita(id, fechaCita, mapRowPaciente(resultSet), mapRowMedico(resultSet), precio);
 	}
 
 	private DtoEps mapRowEps(ResultSet resultSet) throws SQLException {

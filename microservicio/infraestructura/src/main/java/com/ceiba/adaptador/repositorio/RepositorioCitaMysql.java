@@ -53,7 +53,7 @@ public class RepositorioCitaMysql implements RepositorioCita {
     @Override
     public boolean existe(LocalDateTime fechaCita, Long idPaciente, Long idMedico) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
-        paramSource.addValue("fechaCita", fechaCita.toLocalDate());
+        paramSource.addValue("fecha", fechaCita.toLocalDate());
         paramSource.addValue("idPaciente", idPaciente);
         paramSource.addValue("idMedico", idMedico);
 

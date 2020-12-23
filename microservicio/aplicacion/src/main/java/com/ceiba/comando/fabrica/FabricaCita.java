@@ -13,7 +13,8 @@ public class FabricaCita {
 				comandoCita.getId(), 
 				comandoCita.getFechaCita(), 
 				comandoCita.getPaciente().getId(), 
-				comandoCita.getMedico().getId()
+				comandoCita.getMedico().getId(),
+				comandoCita.getPrecio()
 		);
 	}
 

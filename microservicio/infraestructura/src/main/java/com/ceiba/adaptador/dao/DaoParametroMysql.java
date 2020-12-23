@@ -9,6 +9,7 @@ import com.ceiba.adaptador.mapper.MapeoParametro;
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
 import com.ceiba.modelo.dto.DtoParametro;
+import com.ceiba.modelo.util.EnumTipoParametro;
 import com.ceiba.puerto.dao.DaoParametro;
 
 @Component
@@ -18,6 +19,9 @@ public class DaoParametroMysql implements DaoParametro {
 
     @SqlStatement(namespace="parametro", value="listarPorEstado")
     private static String sqlListarPorEstado;
+    
+    @SqlStatement(namespace="parametro", value="listarPorEstadoYTipo.sql")
+    private static String sqlListarPorEstadoYTipo;
 
     public DaoParametroMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
@@ -30,4 +34,13 @@ public class DaoParametroMysql implements DaoParametro {
     	
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListarPorEstado, paramSource, new MapeoParametro());
     }
+
+	@Override
+	public List<DtoParametro> listarPorEstadoYTipo(Boolean estado, EnumTipoParametro enumTipoParametro) {
+		MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("estado", estado);
+        paramSource.addValue("tipo", enumTipoParametro.toString());
+    	
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListarPorEstadoYTipo, paramSource, new MapeoParametro());
+	}
 }

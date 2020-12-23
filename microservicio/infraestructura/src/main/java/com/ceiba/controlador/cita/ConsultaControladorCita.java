@@ -40,5 +40,5 @@ public class ConsultaControladorCita {
     public List<DtoCita> listar() {
         return this.manejadorListarCita.ejecutar();
     }
-
+    
 }

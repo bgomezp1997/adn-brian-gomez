@@ -12,9 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ceiba.ComandoRespuesta;
 import com.ceiba.comando.ComandoCita;
+import com.ceiba.comando.ComandoPrecio;
 import com.ceiba.comando.manejador.cita.ManejadorActualizarCita;
 import com.ceiba.comando.manejador.cita.ManejadorCrearCita;
 import com.ceiba.comando.manejador.cita.ManejadorEliminarCita;
+import com.ceiba.comando.manejador.cita.ManejadorPrecioCita;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -28,13 +30,15 @@ public class ComandoControladorCita {
 	private final ManejadorCrearCita manejadorCrearCita;
 	private final ManejadorEliminarCita manejadorEliminarCita;
 	private final ManejadorActualizarCita manejadorActualizarCita;
+	private final ManejadorPrecioCita manejadorPrecioCita;
 
 	@Autowired
 	public ComandoControladorCita(ManejadorCrearCita manejadorCrearCita,
-			ManejadorEliminarCita manejadorEliminarCita, ManejadorActualizarCita manejadorActualizarCita) {
+			ManejadorEliminarCita manejadorEliminarCita, ManejadorActualizarCita manejadorActualizarCita, ManejadorPrecioCita manejadorPrecioCita) {
 		this.manejadorCrearCita = manejadorCrearCita;
 		this.manejadorEliminarCita = manejadorEliminarCita;
 		this.manejadorActualizarCita = manejadorActualizarCita;
+		this.manejadorPrecioCita = manejadorPrecioCita;
 	}
 
 	@PostMapping
@@ -55,4 +59,10 @@ public class ComandoControladorCita {
 		comandoCita.setId(id);
 		manejadorActualizarCita.ejecutar(comandoCita);
 	}
+	
+	@PostMapping(value = "/precio")
+    @ApiOperation("Obtener precio")
+    public ComandoRespuesta<Double> precio(@RequestBody ComandoPrecio comandoPrecio) {
+        return manejadorPrecioCita.ejecutar(comandoPrecio);
+    }
 }

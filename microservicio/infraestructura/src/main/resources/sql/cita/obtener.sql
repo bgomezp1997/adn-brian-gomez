@@ -1,6 +1,7 @@
 select 
     c.id, 
     c.fecha_cita,
+    c.precio,
     m.id as id_medico,
     m.nombres as nombres_medico,
     m.apellidos as apellidos_medico,

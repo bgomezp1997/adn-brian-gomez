@@ -17,5 +17,6 @@ public class ComandoCita {
 	private LocalDateTime fechaCita;
 	private ComandoPaciente paciente;
 	private ComandoMedico medico;
+	private Double precio;
 	
 }

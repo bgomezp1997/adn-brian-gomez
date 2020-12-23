@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 import com.ceiba.modelo.dto.DtoParametro;
+import com.ceiba.modelo.util.EnumTipoParametro;
 import com.ceiba.puerto.dao.DaoParametro;
 
 @Component
@@ -18,5 +19,9 @@ public class ManejadorListarParametros {
 
 	public List<DtoParametro> ejecutar() {
 		return this.daoParametro.listarPorEstado(Boolean.TRUE);
+	}
+	
+	public List<DtoParametro> ejecutar(Boolean estado, EnumTipoParametro enumTipoParametro) {
+		return this.daoParametro.listarPorEstadoYTipo(estado, enumTipoParametro);
 	}
 }
