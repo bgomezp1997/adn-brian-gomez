@@ -18,7 +18,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import com.ceiba.ApplicationMock;
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes= ApplicationMock.class)
+@ContextConfiguration(classes = ApplicationMock.class)
 @WebMvcTest(ConsultaControladorPaciente.class)
 public class ConsultaControladorPacienteTest {
 
@@ -26,16 +26,21 @@ public class ConsultaControladorPacienteTest {
     private MockMvc mocMvc;
 
     @Test
+    public void obtener() throws Exception {
+    	Long id = 1L;
+        mocMvc.perform(get("/paciente/{id}", id)
+        		.contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.nombres", is("test")));
+    }
+    
+    @Test
     public void listar() throws Exception {
-        // arrange
-
-        // act - assert
         mocMvc.perform(get("/paciente")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(1)))
                 .andExpect(jsonPath("$[0].nombres", is("test")));
     }
-
 
 }

@@ -15,7 +15,6 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 @Primary
 @ComponentScan("com.ceiba")
 public class ApplicationMock {
-	
 
     @Bean
     public DataSource h2DataSource() {
