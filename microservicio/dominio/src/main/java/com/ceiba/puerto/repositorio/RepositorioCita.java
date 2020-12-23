@@ -50,7 +50,7 @@ public interface RepositorioCita {
 	boolean existeExcluyendoId(Long id, LocalDateTime fechaCita, Long idPaciente, Long idMedico);
 	
 	/**
-	 * Permite contar cuántas citas existen por dia
+	 * Permite contar cuantas citas existen por dia
 	 * 
 	 * @param fechaCreacion
 	 * @return cantidad de citas por dia

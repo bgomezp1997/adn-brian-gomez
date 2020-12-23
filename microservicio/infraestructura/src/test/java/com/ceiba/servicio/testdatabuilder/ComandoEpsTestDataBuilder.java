@@ -11,7 +11,7 @@ public class ComandoEpsTestDataBuilder {
 	private String email;
 
     public ComandoEpsTestDataBuilder() {
-    	nombre = "Protección";
+    	nombre = "Proteccion";
     	nit = "548646-5";
     	telefono = "3111584454";
     	email = "proteccion@mail.com";
