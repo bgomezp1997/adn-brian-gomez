@@ -21,6 +21,7 @@ dependencies {
 
 	compileOnly project.ext.lombok
 	annotationProcessor project.ext.lombok
+	compile project.ext.springsecuritycore
 }
 
 jacocoTestReport {

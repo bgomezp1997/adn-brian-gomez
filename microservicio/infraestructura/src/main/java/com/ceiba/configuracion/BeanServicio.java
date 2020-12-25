@@ -3,10 +3,12 @@ package com.ceiba.configuracion;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.ceiba.puerto.dao.DaoUsuario;
 import com.ceiba.puerto.repositorio.RepositorioCita;
 import com.ceiba.puerto.repositorio.RepositorioEps;
 import com.ceiba.puerto.repositorio.RepositorioMedico;
 import com.ceiba.puerto.repositorio.RepositorioPaciente;
+import com.ceiba.puerto.repositorio.RepositorioUsuario;
 import com.ceiba.servicio.cita.ServicioActualizarCita;
 import com.ceiba.servicio.cita.ServicioCrearCita;
 import com.ceiba.servicio.cita.ServicioEliminarCita;
@@ -20,6 +22,10 @@ import com.ceiba.servicio.medico.ServicioEliminarMedico;
 import com.ceiba.servicio.paciente.ServicioActualizarPaciente;
 import com.ceiba.servicio.paciente.ServicioCrearPaciente;
 import com.ceiba.servicio.paciente.ServicioEliminarPaciente;
+import com.ceiba.servicio.usuario.ServicioActualizarUsuario;
+import com.ceiba.servicio.usuario.ServicioCrearUsuario;
+import com.ceiba.servicio.usuario.ServicioEliminarUsuario;
+import com.ceiba.servicio.usuario.ServicioUserDetail;
 
 @Configuration
 public class BeanServicio {
@@ -99,6 +105,29 @@ public class BeanServicio {
 	@Bean
 	public ServicioPrecioCita servicioPrecioCita() {
 		return new ServicioPrecioCita();
+	}
+	
+	/**
+	 * Servicios de eps
+	 */
+	@Bean
+	public ServicioCrearUsuario servicioCrearUsuario(RepositorioUsuario repositorioUsuario) {
+		return new ServicioCrearUsuario(repositorioUsuario);
+	}
+
+	@Bean
+	public ServicioEliminarUsuario servicioEliminarUsuario(RepositorioUsuario repositorioUsuario) {
+		return new ServicioEliminarUsuario(repositorioUsuario);
+	}
+
+	@Bean
+	public ServicioActualizarUsuario servicioActualizarUsuario(RepositorioUsuario repositorioUsuario) {
+		return new ServicioActualizarUsuario(repositorioUsuario);
+	}
+	
+	@Bean
+	public ServicioUserDetail servicioUserDetail(DaoUsuario daoUsuario) {
+		return new ServicioUserDetail(daoUsuario);
 	}
 
 }

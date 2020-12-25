@@ -34,7 +34,7 @@ public class ManejadorPrecioCita implements ManejadorComandoRespuesta<ComandoPre
 		
 		if(estrato < 3) {
 			return Double.valueOf(CacheUtil.obtainParameterByTipoParametroAndParametro(EnumTipoParametro.GENERAL, EnumParametro.DSCTO_ESTRATO_BAJO));
-		} else if(estrato >= 3 && estrato < 5) {
+		} else if(estrato >= 3 && estrato < 4) {
 			return Double.valueOf(CacheUtil.obtainParameterByTipoParametroAndParametro(EnumTipoParametro.GENERAL, EnumParametro.DSCTO_ESTRATO_MEDIO));
 		} else {
 			return Double.valueOf(CacheUtil.obtainParameterByTipoParametroAndParametro(EnumTipoParametro.GENERAL, EnumParametro.DSCTO_ESTRATO_ALTO));

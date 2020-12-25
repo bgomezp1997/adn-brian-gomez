@@ -7,6 +7,13 @@ create table eps (
  primary key (id)
 );
 
+create table usuario (
+ id int not null auto_increment,
+ username varchar(20) not null,
+ password varchar(100) not null,
+ primary key (id)
+);
+
 create table paciente (
  id int not null auto_increment,
  nombres varchar(50) not null,

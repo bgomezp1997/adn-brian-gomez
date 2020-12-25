@@ -23,5 +23,10 @@ dependencies {
 	compile project.ext.actuator
 	compile project.ext.echcache
 	
+	compile project.ext.jwt
+	compile project.ext.springsecuritycore
+	compile project.ext.springsecurityweb
+	compile project.ext.springsecurityconfig
+	
 	implementation project(':comun:comun-dominio')
 }

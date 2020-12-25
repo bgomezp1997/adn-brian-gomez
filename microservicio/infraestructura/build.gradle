@@ -21,6 +21,11 @@ dependencies {
 	compile project.ext.springbootjdbc
 	runtimeOnly project.ext.db
 	testImplementation project.ext.flywaytest
+	
+	compile project.ext.jwt
+	compile project.ext.springsecuritycore
+	compile project.ext.springsecurityweb
+	compile project.ext.springsecurityconfig
 
 	implementation project(':dominio')
 	implementation project(':aplicacion')

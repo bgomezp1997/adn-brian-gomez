@@ -39,6 +39,12 @@ allprojects {
 	project.ext.flywaytest = ["org.flywaydb.flyway-test-extensions:flyway-spring-test:5.2.1"]
 
 	project.ext.h2 = ["com.h2database:h2:1.4.194"]
+	
+	project.ext.jwt=["com.auth0:java-jwt:3.10.3"]
+	project.ext.springsecuritycore=["org.springframework.security:spring-security-core:5.1.5.RELEASE"]
+	project.ext.springsecurityweb=["org.springframework.security:spring-security-web:5.1.5.RELEASE"]
+	project.ext.springsecurityconfig=["org.springframework.security:spring-security-config:5.1.5.RELEASE"]
+	
 }
 
 buildscript {

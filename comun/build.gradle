@@ -31,4 +31,5 @@ allprojects {
 	project.ext.actuator=["org.springframework.boot:spring-boot-starter-actuator:2.1.6.RELEASE"]
 		
 	project.ext.echcache=["net.sf.ehcache:ehcache:2.9.1"]
+	
 }
