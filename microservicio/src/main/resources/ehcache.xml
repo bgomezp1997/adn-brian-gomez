@@ -7,11 +7,11 @@
     <diskStore path="java.io.tmpdir" />
 
     <cache name="paramscache"
-           maxEntriesLocalHeap="999"
+           maxEntriesLocalHeap="10000"
            maxEntriesLocalDisk="1000"
            eternal="false"
            diskSpoolBufferSizeMB="20"
-           timeToIdleSeconds="500" timeToLiveSeconds="1200"
+           timeToIdleSeconds="1000" timeToLiveSeconds="2500"
            memoryStoreEvictionPolicy="LFU"
            transactionalMode="off">
         <persistence strategy="localTempSwap" />
