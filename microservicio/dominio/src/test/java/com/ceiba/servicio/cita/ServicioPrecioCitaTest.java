@@ -7,6 +7,8 @@ import java.io.IOException;
 
 import org.junit.Test;
 
+import com.ceiba.modelo.util.EnumParametro;
+import com.ceiba.servicio.util.EnumEstratos;
 import com.ceiba.util.premock.MockCache;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -17,8 +19,8 @@ public class ServicioPrecioCitaTest {
     public void validarPrecioCitaEstratoBajo() throws JsonParseException, JsonMappingException, IOException  {
     	MockCache.mockParametros(Boolean.TRUE);
     	
-    	String estratoBajo = "2";
-    	String especialidad = "RETINOLOGO";
+    	String estratoBajo = EnumEstratos.ESTRATO_DOS.getValue().toString();
+    	String especialidad = EnumParametro.RETINOLOGO.toString();
     	ServicioPrecioCita servicioPrecioCita = new ServicioPrecioCita();
     	Double precioCita = servicioPrecioCita.ejecutar(estratoBajo, especialidad);
         
@@ -30,8 +32,8 @@ public class ServicioPrecioCitaTest {
     public void validarPrecioCitaEstratoMedio() throws JsonParseException, JsonMappingException, IOException  {
     	MockCache.mockParametros(Boolean.TRUE);
     	
-    	String estratoMedio = "3";
-    	String especialidad = "RETINOLOGO";
+    	String estratoMedio = EnumEstratos.ESTRATO_TRES.getValue().toString();
+    	String especialidad = EnumParametro.RETINOLOGO.toString();
     	ServicioPrecioCita servicioPrecioCita = new ServicioPrecioCita();
     	Double precioCita = servicioPrecioCita.ejecutar(estratoMedio, especialidad);
         
@@ -43,8 +45,8 @@ public class ServicioPrecioCitaTest {
     public void validarPrecioCitaEstratoAlto() throws JsonParseException, JsonMappingException, IOException  {
     	MockCache.mockParametros(Boolean.TRUE);
     	
-    	String estratoAlto = "5";
-    	String especialidad = "RETINOLOGO";
+    	String estratoAlto = EnumEstratos.ESTRATO_CINCO.getValue().toString();
+    	String especialidad = EnumParametro.RETINOLOGO.toString();
     	ServicioPrecioCita servicioPrecioCita = new ServicioPrecioCita();
     	Double precioCita = servicioPrecioCita.ejecutar(estratoAlto, especialidad);
         
@@ -57,7 +59,7 @@ public class ServicioPrecioCitaTest {
     	MockCache.mockParametros(Boolean.TRUE);
     	
     	String estrato = null;
-    	String especialidad = "RETINOLOGO";
+    	String especialidad = EnumParametro.RETINOLOGO.toString();
     	ServicioPrecioCita servicioPrecioCita = new ServicioPrecioCita();
     	Double precioCita = servicioPrecioCita.ejecutar(estrato, especialidad);
         

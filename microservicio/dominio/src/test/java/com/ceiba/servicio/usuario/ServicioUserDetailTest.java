@@ -24,7 +24,7 @@ public class ServicioUserDetailTest {
         Mockito.when(daoUsuario.obtenerPorUsername(Mockito.anyString())).thenThrow(NoSuchElementException.class);
         ServicioUserDetail servicioUserDetail = new ServicioUserDetail(daoUsuario);
         
-        BasePrueba.assertThrows(() -> servicioUserDetail.loadUserByUsername(username), ExcepcionAutenticacion.class,"Hubo un error en la autenticacion del usuario. Usuario o contraseña incorrectos.");
+        BasePrueba.assertThrows(() -> servicioUserDetail.loadUserByUsername(username), ExcepcionAutenticacion.class,"Hubo un error en la autenticacion del usuario. Usuario o contrase\u00f1a incorrectos.");
     }
     
     @Test

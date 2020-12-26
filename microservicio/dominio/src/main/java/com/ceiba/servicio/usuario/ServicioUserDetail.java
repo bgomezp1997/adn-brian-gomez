@@ -12,7 +12,7 @@ import com.ceiba.puerto.dao.DaoUsuario;
 
 public class ServicioUserDetail implements UserDetailsService {
 
-	public static final String MENSAJE_ERROR_AUTENTICACION = "Hubo un error en la autenticacion del usuario. Usuario o contraseña incorrectos.";
+	public static final String MENSAJE_ERROR_AUTENTICACION = "Hubo un error en la autenticacion del usuario. Usuario o contrase\u00f1a incorrectos.";
 
 	private final DaoUsuario daoUsuario;
 
