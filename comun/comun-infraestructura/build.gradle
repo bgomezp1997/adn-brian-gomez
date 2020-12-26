@@ -28,5 +28,8 @@ dependencies {
 	compile project.ext.springsecurityweb
 	compile project.ext.springsecurityconfig
 	
+	compile project.ext.cxfspring
+	compile project.ext.jaxwsri
+	
 	implementation project(':comun:comun-dominio')
 }
