@@ -1,6 +1,7 @@
 package com.ceiba.servicio.usuario;
 
 import java.util.ArrayList;
+import java.util.NoSuchElementException;
 
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -25,8 +26,7 @@ public class ServicioUserDetail implements UserDetailsService {
 		DtoUsuario dtoUsuario = null;
 		try {
 			dtoUsuario = daoUsuario.obtenerPorUsername(username);
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (NoSuchElementException e) {
 			throw new ExcepcionAutenticacion(MENSAJE_ERROR_AUTENTICACION);
 		}
 		return new User(dtoUsuario.getUsername(), dtoUsuario.getPassword(), true, true, true, true, new ArrayList<>());
