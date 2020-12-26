@@ -1,4 +1,4 @@
-package com.ceiba.cache;
+package com.ceiba.dominio.cache;
 
 import net.sf.ehcache.Cache;
 import net.sf.ehcache.CacheException;

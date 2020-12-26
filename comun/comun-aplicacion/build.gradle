@@ -11,5 +11,4 @@ repositories {
 
 dependencies {
 	compile project.ext.springtxt
-	compile project.ext.echcache
 }

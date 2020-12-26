@@ -17,9 +17,9 @@ public class FabricaUsuario {
 	
 	public Usuario crear(ComandoUsuario comandoUsuario) {
 		return new Usuario(
-				comandoUsuario.getId(), 
-				comandoUsuario.getUsername(),
-				bCryptPasswordEncoder.encode(comandoUsuario.getPassword())
+				comandoUsuario.getId(),
+				bCryptPasswordEncoder.encode(comandoUsuario.getPassword()),
+				comandoUsuario.getUsername()
 		);
 	}
 

@@ -1,4 +1,4 @@
-package com.ceiba.configuracion.security;
+package com.ceiba.infraestructura.seguridad;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
-import com.ceiba.configuracion.security.util.ConstantesSeguridad;
+import com.ceiba.infraestructura.seguridad.util.ConstantesSeguridad;
 
 public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
 

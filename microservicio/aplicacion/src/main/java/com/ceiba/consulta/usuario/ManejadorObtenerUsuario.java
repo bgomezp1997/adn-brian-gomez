@@ -17,5 +17,9 @@ public class ManejadorObtenerUsuario {
 	public DtoUsuario ejecutar(Long id) {
 		return this.daoUsuario.obtener(id);
 	}
+	
+	public DtoUsuario ejecutar(String username) {
+		return this.daoUsuario.obtenerPorUsername(username);
+	}
 
 }

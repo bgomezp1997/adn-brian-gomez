@@ -6,23 +6,24 @@ import java.util.List;
 import org.springframework.context.annotation.DependsOn;
 import org.springframework.stereotype.Component;
 
-import com.ceiba.consulta.parametro.ManejadorListarParametros;
+import com.ceiba.dominio.cache.ObjCacheManager;
 import com.ceiba.modelo.dto.DtoParametro;
 import com.ceiba.modelo.util.EnumTipoParametro;
+import com.ceiba.puerto.dao.DaoParametro;
 
 @Component
 @DependsOn("flyway")
 public class CacheComponent {
 
-	private final ManejadorListarParametros manejadorListarParametros;
+	private final DaoParametro daoParametro;
 
-	public CacheComponent(ManejadorListarParametros manejadorListarParametros) {
-		this.manejadorListarParametros = manejadorListarParametros;
+	public CacheComponent(DaoParametro daoParametro) {
+		this.daoParametro = daoParametro;
 		createCache();
 	}
 
 	private void createCache() {
-		List<DtoParametro> listParametros = manejadorListarParametros.ejecutar();
+		List<DtoParametro> listParametros = daoParametro.listarPorEstado(Boolean.TRUE);
 		if (!listParametros.isEmpty()) {
 			List<DtoParametro> listaFestivos = new ArrayList<>();
 			List<DtoParametro> listaGenerales = new ArrayList<>();

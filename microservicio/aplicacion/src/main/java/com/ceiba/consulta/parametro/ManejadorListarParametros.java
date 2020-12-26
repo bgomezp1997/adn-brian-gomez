@@ -16,10 +16,6 @@ public class ManejadorListarParametros {
 	public ManejadorListarParametros(DaoParametro daoParametro) {
 		this.daoParametro = daoParametro;
 	}
-
-	public List<DtoParametro> ejecutar() {
-		return this.daoParametro.listarPorEstado(Boolean.TRUE);
-	}
 	
 	public List<DtoParametro> ejecutar(Boolean estado, EnumTipoParametro enumTipoParametro) {
 		return this.daoParametro.listarPorEstadoYTipo(estado, enumTipoParametro);

@@ -1,4 +1,4 @@
-package com.ceiba.servicio.testdatabuilder;
+package com.ceiba.util.builder;
 
 import java.time.LocalDateTime;
 
@@ -26,6 +26,11 @@ public class CitaTestDataBuilder {
 	
 	public CitaTestDataBuilder siendoDomingo() {
 		fechaCita = LocalDateTime.of(2020, 12, 27, 0, 0);
+		return this;
+	}
+	
+	public CitaTestDataBuilder siendoFestivo() {
+		fechaCita = LocalDateTime.of(2021, 01, 01, 0, 0);
 		return this;
 	}
 

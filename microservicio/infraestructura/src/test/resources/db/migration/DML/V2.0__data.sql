@@ -3,3 +3,4 @@ insert into paciente (nombres, apellidos, identificacion, fecha_creacion, email,
 insert into paciente (nombres, apellidos, identificacion, fecha_creacion, email, estrato, id_eps) values ('test', 'test', '1234567', now(), 'test@mail.com', '3', 1);
 insert into medico (nombres, apellidos, identificacion, fecha_creacion, email, especialidad, numero_tarjeta_profesional) values ('test', 'test', '12345', now(), 'test@mail.com', 'test', 'test');
 insert into cita (fecha_cita, id_paciente, id_medico, precio) values (now(), 1, 1, 2000);
+insert into usuario (username, password) values ('test', '$2a$10$3LGJTQFzxhFA2bqlEmy4FuFbk9MSfmDTKnHLRUDEAiJ8QhQHqQ3SS');

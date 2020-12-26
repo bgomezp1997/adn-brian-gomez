@@ -7,11 +7,14 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import com.ceiba.cache.CacheUtil;
 import com.ceiba.dominio.excepcion.ExcepcionCitasExcedidas;
 import com.ceiba.dominio.excepcion.ExcepcionDiaNoLaborable;
 import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 import com.ceiba.modelo.dto.DtoParametro;
 import com.ceiba.modelo.entidad.Cita;
+import com.ceiba.modelo.util.EnumParametro;
+import com.ceiba.modelo.util.EnumTipoParametro;
 import com.ceiba.puerto.repositorio.RepositorioCita;
 
 public class ServicioActualizarCita {
@@ -27,10 +30,10 @@ public class ServicioActualizarCita {
         this.repositorioCita = repositorioCita;
     }
 
-    public void ejecutar(Cita cita, Integer cantidadCitasPermitidas, List<DtoParametro> fechasFestivasParams) {
+    public void ejecutar(Cita cita) {
         validarExistenciaPrevia(cita);
-        validarTopeCitas(cita, cantidadCitasPermitidas);
-        validarFechas(cita, fechasFestivasParams);
+        validarTopeCitas(cita, Integer.parseInt(CacheUtil.obtainParameterByTipoParametroAndParametro(EnumTipoParametro.GENERAL, EnumParametro.CANTIDAD_CITAS_DIA)));
+        validarFechas(cita, CacheUtil.obtainListByTipoParametro(EnumTipoParametro.FESTIVO));
         this.repositorioCita.actualizar(cita);
     }
 

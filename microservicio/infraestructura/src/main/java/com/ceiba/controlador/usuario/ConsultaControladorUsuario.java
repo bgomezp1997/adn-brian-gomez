@@ -34,6 +34,12 @@ public class ConsultaControladorUsuario {
     public DtoUsuario obtener(@PathVariable Long id) {
     	return this.manejadorObtenerUsuario.ejecutar(id);
     }
+    
+    @GetMapping(value = "/only/{username}")
+    @ApiOperation("Obtener Usuario")
+    public DtoUsuario obtenerPorUsuario(@PathVariable String username) {
+    	return this.manejadorObtenerUsuario.ejecutar(username);
+    }
 
     @GetMapping
     @ApiOperation("Listar Usuarios")
