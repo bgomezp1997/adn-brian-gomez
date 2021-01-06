@@ -1,3 +1,7 @@
+ext {
+ 	isK8s = project.hasProperty('k8s')
+}
+
 allprojects {
     repositories {
         mavenCentral() 
@@ -43,7 +47,7 @@ allprojects {
 	project.ext.springsecuritycore=["org.springframework.security:spring-security-core:5.1.5.RELEASE"]
 	
 	project.ext.jackson=["com.fasterxml.jackson.core:jackson-databind:2.0.1"]
-	
+	project.ext.kubernetes=["org.springframework.cloud:spring-cloud-starter-kubernetes-config:1.1.7.RELEASE"]
 }
 
 buildscript {
@@ -76,6 +80,10 @@ dependencies {
 
 	compile project.ext.springbootweb
 	runtimeOnly project.ext.springdevtools
+	
+	if (isK8s) {
+       compile project.ext.kubernetes
+    }
 	
 	implementation project.ext.springbootundertow
 	implementation project.ext.flyway

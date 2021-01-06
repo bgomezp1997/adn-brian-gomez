@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: adn-brian-gomez-back
+  namespace: prueba-concepto
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: adn-brian-gomez-back
+  template:
+    metadata:
+      labels:
+        app: adn-brian-gomez-back
+    spec:
+      containers:
+        - name: adn-brian-gomez-back
+          image: pruebaconcepto.azurecr.io/adn-brian-gomez-back:latest
+          ports:
+            - containerPort: 8090
+          resources:
+            limits: 
+              memory: 512Mi
+            requests:
+              cpu: 100m
+              memory: 200Mi 
+          env:
+          - name: DB_DATABASE
+            valueFrom:
+             secretKeyRef:
+                name: db-secret
+                key: db_database
+          - name: DB_USER
+            valueFrom:
+             secretKeyRef:
+                name: db-secret
+                key: db_user
+          - name: DB_PASSWORD
+            valueFrom:
+             secretKeyRef:
+                name: db-secret
+                key: db_password
+        
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: adn-brian-gomez-back
+  namespace: prueba-concepto
+spec:
+  type: LoadBalancer
+  selector:
+    app: adn-brian-gomez-back
+  ports:
+    - port: 8090
+      protocol: TCP
+      targetPort: 8090

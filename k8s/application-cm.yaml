@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: adn-brian-gomez-back
+  namespace: prueba-concepto
+data:
+  application.yml: |-
+    spring:
+      datasource:
+        jdbcUrl: jdbc:mysql://${ADN-DB.HOST}:${ADN-DB.PORT}/${DB_DATABASE}?autoReconnect=true&useSSL=false
+        username: ${DB_USER}
+        password: '${DB_PASSWORD}'
+        hikari:
+          poolName: pool

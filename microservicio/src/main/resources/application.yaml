@@ -13,8 +13,8 @@ server:
 spring:
    datasource:
       type: com.zaxxer.hikari.HikariDataSource
-      jdbcUrl: jdbc:mysql://localhost:3306/adn?autoReconnect=true&useSSL=false
-      username: root
-      password: 12345
+      jdbcUrl: jdbc:mysql://${DB_HOST}:${DB_PORT}/${DB_DATABASE}?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+      username: ${DB_USER}
+      password: '${DB_PASSWORD}'
       hikari:
          poolName: pool

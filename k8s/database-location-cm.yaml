@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: db-location
+  namespace: prueba-concepto
+data:
+  application.yml: |-
+    ADN-DB:
+      HOST: prueba-concepto-database.mysql.database.azure.com
+      PORT: 3306
