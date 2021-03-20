@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: adn-brian-gomez-back
+  cloud:
+    kubernetes:
+      reload: 
+        enabled: true
+      config:
+        enabled: true
+        sources: 
+         - name: adn-brian-gomez-back
+           namespace: prueba-concepto
+         - name: db-location
+           namespace: prueba-concepto

@@ -5,6 +5,6 @@ metadata:
   namespace: prueba-concepto
 data:
   application.yml: |-
-    ADN-DB:
-      HOST: prueba-concepto-database.mysql.database.azure.com
-      PORT: 3306
+    db:
+      host: prueba-concepto.mysql.database.azure.com
+      port: 3306

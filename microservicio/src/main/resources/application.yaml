@@ -13,8 +13,8 @@ server:
 spring:
    datasource:
       type: com.zaxxer.hikari.HikariDataSource
-      jdbcUrl: jdbc:mysql://${DB_HOST}:${DB_PORT}/${DB_DATABASE}?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-      username: ${DB_USER}
-      password: '${DB_PASSWORD}'
+      jdbcUrl: jdbc:mysql://prueba-concepto.mysql.database.azure.com:3306/adn?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC
+      username: brian@prueba-concepto
+      password: Armenia2021
       hikari:
          poolName: pool

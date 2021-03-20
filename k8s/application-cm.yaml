@@ -7,8 +7,6 @@ data:
   application.yml: |-
     spring:
       datasource:
-        jdbcUrl: jdbc:mysql://${ADN-DB.HOST}:${ADN-DB.PORT}/${DB_DATABASE}?autoReconnect=true&useSSL=false
+        jdbcUrl: jdbc:mysql://${db.host}:${db.port}/${DB_DATABASE}?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC
         username: ${DB_USER}
-        password: '${DB_PASSWORD}'
-        hikari:
-          poolName: pool
+        password: ${DB_PASSWORD}

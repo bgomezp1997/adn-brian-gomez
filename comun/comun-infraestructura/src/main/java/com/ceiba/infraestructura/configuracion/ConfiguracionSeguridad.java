@@ -7,18 +7,20 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-public class ConfiguracionSeguridad implements WebMvcConfigurer {
+public class ConfiguracionSeguridad {
 
 	@Bean
 	public BCryptPasswordEncoder bCryptPasswordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
 
-	@Override
-	public void addCorsMappings(CorsRegistry registry) {
-		registry.addMapping("/**")
-					.allowedOrigins("http://localhost:4201")
-					.allowedMethods("GET", "POST", "PUT", "DELETE", "HEAD")
-					.allowCredentials(true);
+	@Bean
+	public WebMvcConfigurer corsConfigurer() {
+		return new WebMvcConfigurer() {
+			@Override
+			public void addCorsMappings(CorsRegistry corsRegistry) {
+				corsRegistry.addMapping("/**").allowedOrigins("*").allowedMethods("GET", "POST", "PUT", "DELETE");
+			}
+		};
 	}
 }
